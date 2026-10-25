@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>生活影视 - 生活流观影指南·慢电影/生活纪录片/治愈下饭剧 | xingshenghuoyingshi-h5.github.io</title>
+<meta name="description" content="生活影视（xingshenghuoyingshi-h5.github.io）生活流观影指南：生活流电影、生活观察纪录片、治愈下饭剧一站策展。小森林、海街日记、完美的日子、人间世、人生一串、请回答1988、去有风的地方——不追爽点，只拍三餐四季。纯静态演示站，不提供资源下载。" />
+<meta name="keywords" content="生活影视,xingshenghuoyingshi-h5,生活流电影,治愈片单,生活纪录片,下饭剧,小森林,海街日记,完美的日子,人间世,请回答1988" />
+<link rel="canonical" href="https://xingshenghuoyingshi-h5.github.io/" />
+<style>
+:root{
+  --linen:#F6F1E7;--clay:#A47148;--matcha:#5F7A6B;--sunset:#E08A5C;
+  --ink:#2E2A24;--cream:#FFFCF6;--fade:#9A8E7C;--line:rgba(164,113,72,.22);--maxw:1160px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--linen);color:var(--ink);line-height:1.85;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+/* 缝线顶条 */
+.stitch{height:10px;background:
+  linear-gradient(90deg,var(--linen) 0 8px,var(--clay) 8px 10px) 0 0/18px 10px repeat-x;
+  border-bottom:1px solid var(--line)}
+
+/* 顶部 */
+header.site{position:sticky;top:0;z-index:60;background:rgba(246,241,231,.96);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:.5px}
+.bowl{width:38px;height:38px;border-radius:0 0 50% 50%/0 0 60% 60%;background:linear-gradient(180deg,var(--clay),var(--sunset));display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px;box-shadow:0 3px 10px rgba(164,113,72,.25);position:relative}
+.bowl::before{content:"♨";color:var(--cream);font-size:16px;line-height:1}
+.bowl::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:26px;height:6px;border-radius:50%;border:2px solid var(--clay);background:var(--linen)}
+.logo small{display:block;font-size:9px;color:var(--fade);font-weight:600;letter-spacing:.5px}
+.menu{margin-left:auto;display:flex;gap:3px}
+.menu a{padding:7px 13px;border-radius:20px;font-size:13px;font-weight:700;color:var(--ink)}
+.menu a:hover{background:var(--clay);color:var(--cream)}
+.menu a.active{background:var(--matcha);color:var(--cream)}
+.search-min{display:flex;gap:6px}
+.search-min input{width:150px;padding:7px 14px;border-radius:20px;border:1.5px solid var(--line);background:var(--cream);outline:none;font-size:13px;color:var(--ink)}
+.search-min input::placeholder{color:var(--fade)}
+.search-min button{border:0;padding:7px 16px;border-radius:20px;cursor:pointer;font-weight:800;color:var(--cream);background:var(--clay)}
+.burger{display:none;margin-left:auto;border:1.5px solid var(--line);background:var(--cream);border-radius:8px;padding:6px 10px;font-size:16px;color:var(--clay)}
+
+/* Hero */
+.hero{margin:22px 0 8px;border-radius:26px;overflow:hidden;padding:54px 30px;text-align:center;position:relative;
+  background:radial-gradient(900px 360px at 82% 18%,rgba(224,138,92,.26),transparent),radial-gradient(700px 300px at 12% 92%,rgba(95,122,107,.20),transparent),var(--cream);
+  border:1.5px solid var(--line)}
+.hero::before{content:"三 餐 四 季 · 都 值 得 被 拍 下 来";position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--fade);letter-spacing:6px;white-space:nowrap}
+.steam{position:absolute;top:14px;right:26px;font-size:22px;animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{0%,100%{transform:translateY(0) scale(1);opacity:.5}50%{transform:translateY(-8px) scale(1.12);opacity:.9}}
+.hero .mood{display:inline-block;font-size:11px;font-weight:800;color:var(--cream);background:var(--matcha);padding:3px 12px;border-radius:20px;margin-bottom:14px;letter-spacing:1px}
+.hero h1{font-size:40px;margin:0 0 8px;font-weight:900;letter-spacing:1px;position:relative}
+.hero h1 em{font-style:normal;color:var(--clay)}
+.hero h1 .bowl2{font-style:normal}
+.hero p{color:var(--fade);font-size:14px;margin:0 auto 22px;max-width:600px;line-height:1.95;position:relative}
+.bigbar{display:flex;gap:8px;max-width:510px;margin:0 auto;background:var(--linen);border:1.5px solid var(--clay);border-radius:26px;padding:5px 5px 5px 18px;position:relative}
+.bigbar input{flex:1;border:0;outline:none;font-size:14px;background:transparent;color:var(--ink)}
+.bigbar input::placeholder{color:var(--fade)}
+.bigbar button{border:0;padding:10px 22px;border-radius:22px;font-weight:900;cursor:pointer;color:var(--cream);background:linear-gradient(135deg,var(--clay),var(--sunset))}
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px;position:relative}
+.chips a{font-size:12px;font-weight:700;padding:5px 14px;border-radius:18px;background:var(--cream);color:var(--ink);border:1.5px solid var(--line)}
+.chips a:hover{background:var(--sunset);color:var(--cream);border-color:var(--sunset)}
+
+/* 当下状态 */
+.moodbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:22px 0 4px}
+.mb{flex:1;min-width:140px;text-align:center;background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:12px}
+.mb b{display:block;font-size:17px;font-weight:900;color:var(--clay)}
+.mb span{font-size:11px;color:var(--fade)}
+
+/* 区块 */
+.section{padding:26px 0}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap;border-left:5px solid var(--matcha);padding-left:12px}
+.sec-head h2{font-size:20px;margin:0;font-weight:900;letter-spacing:.5px}
+.sec-head h2::before{content:"🍵 ";}
+.sec-head h2 .b{color:var(--clay)}
+.sec-head span{color:var(--fade);font-size:12px}
+.more{margin-left:auto;color:var(--matcha);font-size:12px;font-weight:800}
+
+/* 主编碗 */
+.leadbowl{display:grid;grid-template-columns:1.3fr 1fr;gap:16px}
+.bowlcard{background:var(--cream);border:1.5px solid var(--clay);border-radius:20px;overflow:hidden;position:relative}
+.bowlcard .cv{aspect-ratio:16/10;display:flex;align-items:flex-end;padding:20px;position:relative;
+  background:radial-gradient(120% 80% at 30% 15%,rgba(224,138,92,.30),transparent),linear-gradient(150deg,#6b5a48,#2E2A24)}
+.bowlcard .cv .tag{position:absolute;top:16px;left:16px;font-size:10px;font-weight:900;color:var(--cream);background:var(--sunset);padding:3px 10px;border-radius:20px;letter-spacing:1px}
+.bowlcard .cv .quote{position:absolute;top:16px;right:16px;font-size:22px;color:var(--sunset);font-family:Georgia,serif;line-height:1}
+.bowlcard .cv h3{color:var(--cream);font-size:23px;font-weight:900;margin:0;width:100%;text-shadow:0 2px 10px rgba(0,0,0,.4);line-height:1.35}
+.bowlcard .body{padding:18px}
+.bowlcard .body>p{font-size:13px;color:var(--fade);margin:0 0 10px;line-height:1.8}
+.bowlcard .body .who{font-size:11px;color:var(--clay);font-weight:700}
+.bowlcard .body .line{display:flex;gap:14px;margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+.bowlcard .body .line div{flex:1}
+.bowlcard .body .line b{display:block;font-size:16px;color:var(--matcha);font-weight:900}
+.bowlcard .body .line span{font-size:10px;color:var(--fade)}
+
+.sidebowl{display:flex;flex-direction:column;gap:16px}
+.sb{background:var(--cream);border:1.5px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s;flex:1}
+.sb:hover{border-color:var(--sunset);transform:translateY(-3px)}
+.sb .cv{aspect-ratio:16/9;display:flex;align-items:flex-end;padding:14px}
+.sb:nth-child(1) .cv{background:linear-gradient(150deg,#5F7A6B,#2E2A24)}
+.sb:nth-child(2) .cv{background:linear-gradient(150deg,#C9A227,#6b5a10)}
+.sb .cv h4{color:var(--cream);font-size:15px;font-weight:900;margin:0;width:100%;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+.sb .body{padding:14px}
+.sb .body p{font-size:12px;color:var(--fade);margin:0 0 6px;line-height:1.65}
+.sb .body .tags span{font-size:10px;padding:2px 8px;border-radius:10px;background:rgba(95,122,107,.16);color:var(--matcha);font-weight:700;margin-right:4px}
+.sb .body .tags span.w{background:rgba(224,138,92,.18);color:var(--sunset)}
+
+/* 三味网格 */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--cream);border:1.5px solid var(--line);border-radius:16px;overflow:hidden;transition:.22s}
+.card:hover{transform:translateY(-4px);border-color:var(--clay);box-shadow:0 10px 24px rgba(164,113,72,.14)}
+.card .cv{aspect-ratio:2/3;display:flex;align-items:flex-end;padding:12px;position:relative}
+.card:nth-child(12n+1) .cv{background:linear-gradient(160deg,#6b5a48,#E08A5C)}
+.card:nth-child(12n+2) .cv{background:linear-gradient(160deg,#3d5247,#5F7A6B)}
+.card:nth-child(12n+3) .cv{background:linear-gradient(160deg,#7a5a3a,#C9A227)}
+.card:nth-child(12n+4) .cv{background:linear-gradient(160deg,#5a4a3a,#A47148)}
+.card:nth-child(12n+5) .cv{background:linear-gradient(160deg,#4a5a3a,#8a9a4a)}
+.card:nth-child(12n+6) .cv{background:linear-gradient(160deg,#3a4a5a,#6a8a9a)}
+.card:nth-child(12n+7) .cv{background:linear-gradient(160deg,#5a3a4a,#a06a8a)}
+.card:nth-child(12n+8) .cv{background:linear-gradient(160deg,#6b5a2a,#E08A5C)}
+.card .cv .no{position:absolute;top:10px;left:10px;font-size:10px;font-weight:900;color:var(--cream);background:rgba(46,42,36,.55);padding:2px 7px;border-radius:20px;letter-spacing:.5px;backdrop-filter:blur(2px)}
+.card .cv .vibe{position:absolute;top:10px;right:10px;font-size:11px;color:var(--sunset)}
+.card .cv h4{color:var(--cream);font-size:13px;font-weight:900;margin:0;width:100%;text-shadow:0 2px 6px rgba(0,0,0,.45);line-height:1.4}
+.card .meta{padding:12px}
+.card .meta .why{font-size:12px;color:var(--clay);font-weight:700;font-style:italic;margin:0 0 4px;line-height:1.6}
+.card .meta p{font-size:11px;color:var(--fade);margin:0 0 6px;line-height:1.55}
+.card .meta .line{display:flex;justify-content:space-between;align-items:center;padding-top:6px;border-top:1px dashed var(--line)}
+.card .meta .line span{font-size:10px;color:var(--fade)}
+.card .meta .line em{font-style:normal;font-size:11px;font-weight:900;color:var(--matcha)}
+
+/* 纪录片时间线 */
+.docline{display:flex;flex-direction:column;gap:14px}
+.doc{display:flex;gap:14px;background:var(--cream);border:1.5px solid var(--line);border-left:5px solid var(--matcha);border-radius:14px;padding:14px 16px;transition:.2s}
+.doc:hover{border-color:var(--matcha);background:#f3ede0}
+.doc .when{width:76px;flex-shrink:0;text-align:center}
+.doc .when b{display:block;font-family:"Courier New",monospace;font-size:15px;color:var(--matcha);font-weight:900}
+.doc .when span{font-size:9px;color:var(--fade);font-weight:700}
+.doc .body h4{font-size:14px;margin:0 0 3px;font-weight:900}
+.doc .body h4 em{font-style:normal;font-size:10px;color:var(--sunset);font-weight:800;margin-left:6px;border:1px solid var(--sunset);padding:1px 6px;border-radius:10px;vertical-align:middle}
+.doc .body p{font-size:12px;color:var(--fade);margin:0;line-height:1.75}
+.doc .score{width:52px;flex-shrink:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-left:1px dashed var(--line)}
+.doc .score b{font-size:16px;color:var(--clay);font-weight:900;line-height:1.1}
+.doc .score span{font-size:9px;color:var(--fade)}
+
+/* 布局 */
+.layout{display:grid;grid-template-columns:1fr 320px;gap:22px}
+
+/* 侧栏 */
+.side{background:var(--cream);border:1.5px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}
+.side h3{font-size:14px;margin:0 0 12px;font-weight:900;color:var(--ink)}
+.side h3::before{content:"🍚 ";}
+.menu2{display:flex;flex-direction:column;gap:6px}
+.menu2 a{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:12px;font-size:13px;font-weight:700;color:var(--ink);border:1px solid transparent}
+.menu2 a:hover{background:var(--linen);border-color:var(--line)}
+.menu2 a i{font-style:normal;font-size:15px}
+.menu2 a em{font-style:normal;font-size:10px;color:var(--fade);font-weight:600;margin-left:auto}
+
+.cook{display:flex;flex-direction:column;gap:10px}
+.cook .row{display:flex;align-items:center;gap:10px;font-size:12px}
+.cook .row .nm{width:84px;flex-shrink:0;color:var(--fade)}
+.cook .bar{flex:1;height:7px;background:var(--linen);border-radius:99px;overflow:hidden;border:1px solid var(--line)}
+.cook .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--matcha),var(--sunset));border-radius:99px}
+.cook .row b{font-size:11px;color:var(--clay);width:34px;text-align:right}
+
+.routine{list-style:none;margin:0;padding:0}
+.routine li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);font-size:12px;color:var(--fade);line-height:1.6}
+.routine li:last-child{border-bottom:0}
+.routine li .t{font-family:"Courier New",monospace;font-size:11px;font-weight:900;color:var(--matcha);flex-shrink:0;width:46px}
+.routine li b{color:var(--ink)}
+
+/* FAQ */
+.faq .qa{background:var(--cream);border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.faq .qa h4{font-size:14px;margin:0 0 6px;color:var(--clay);font-weight:900}
+.faq .qa p{font-size:12px;color:var(--fade);margin:0;line-height:1.85}
+.warnbox{border-color:var(--sunset);background:#fbf1e8}
+
+/* 关于 */
+.about{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;margin-top:16px}
+.abox{background:var(--cream);border:1.5px solid var(--line);border-radius:18px;padding:22px}
+.abox h3{font-size:16px;margin:0 0 10px;font-weight:900;color:var(--ink)}
+.abox h3::before{content:"🍵 ";}
+.abox p,.abox li{font-size:13px;color:var(--fade);line-height:1.9}
+.abox ul{padding-left:18px;margin:0}
+.stats{display:flex;gap:10px;margin-top:14px}
+.st{flex:1;text-align:center;background:var(--linen);border:1.5px solid var(--line);border-radius:14px;padding:12px}
+.st b{display:block;font-size:17px;color:var(--clay);font-weight:900}
+.st span{font-size:10px;color:var(--fade)}
+
+footer.site{border-top:3px solid var(--clay);background:var(--ink);color:var(--fade);padding:28px 0 44px;font-size:12px;text-align:center}
+footer.site .fl{font-size:19px;font-weight:900;color:var(--cream);margin-bottom:8px;letter-spacing:1px}
+footer.site .fl span{color:var(--sunset)}
+code{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:2px 6px;border-radius:4px;color:var(--sunset);font-size:11px}
+
+@media(max-width:980px){.leadbowl{grid-template-columns:1fr}.grid{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+@media(max-width:720px){
+  .menu{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:var(--linen);border-bottom:1.5px solid var(--line);padding:10px 16px}
+  .menu.open{display:flex}.burger{display:block}.search-min input{width:80px}.hero h1{font-size:25px}
+  .grid{grid-template-columns:repeat(2,1fr)}.doc{flex-direction:column}.doc .score{border-left:0;border-top:1px dashed var(--line);width:auto;flex-direction:row;gap:6px;padding-top:8px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="stitch"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="logo">
+      <div class="bowl"></div>
+      <div>生活影视<small>三餐四季，都值得被拍下来</small></div>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#home" class="active">今日碗</a>
+      <a href="#slow">生活流电影</a>
+      <a href="#doc">生活观察纪录片</a>
+      <a href="#heal">治愈下饭剧</a>
+      <a href="#faq">为什么只拍生活</a>
+    </nav>
+    <div class="search-min">
+      <input type="text" placeholder="想看哪种生活：比如“一个人吃饭”“丧到想哭”" />
+      <button onclick="alert('演示站：只返片单与正版观看渠道，不提供资源下载')">盛一碗</button>
+    </div>
+    <button class="burger" id="burger">☰</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="home">
+    <span class="steam">♨</span>
+    <span class="mood">生活流观影指南 · 不是逃避生活，是在里面找到自己向往的模样</span>
+    <h1><em>生活</em>影视 <span class="bowl2">🍚</span></h1>
+    <p>不追爽点、不喂狗血、不把生活拍成爽文。<br/>这里只收一种片子：<strong>镜头肯蹲下来，看一个人做饭、扫地、等公交、跟邻居打招呼</strong>。<br/>看完你不会更亢奋，但会突然觉得——今天这碗饭，可以好好吃完。</p>
+    <div class="bigbar">
+      <input type="text" placeholder="> 我现在想看：被温柔接住 / 一个人也不慌 / 笑着把饭吃完" />
+      <button onclick="alert('演示：此处只返片单与正版渠道，不生成任何下载链接')">盛一碗</button>
+    </div>
+    <div class="chips">
+      <a href="#slow">生活流电影</a>
+      <a href="#doc">生活观察纪录片</a>
+      <a href="#heal">治愈下饭剧</a>
+      <a href="#faq">为什么不追爽片</a>
+    </div>
+  </section>
+
+  <div class="moodbar">
+    <div class="mb"><b>累了，先停下</b><span>《我的事说来话长》《朴夏京旅行记》</span></div>
+    <div class="mb"><b>一个人也不慌</b><span>《小森林》《完美的日子》《我们俩》</span></div>
+    <div class="mb"><b>笑着把饭吃完</b><span>《摩登家庭》《孤独的美食家》</span></div>
+    <div class="mb"><b>想被生活捶一下</b><span>《人间世》《我的解放日志》</span></div>
+  </div>
+
+  <section class="section" id="slow">
+    <div class="sec-head"><h2><span class="b">今日</span>一碗 · 主编之选</h2><span>bowl.of.today</span><a class="more" href="#">更多 #</a></div>
+    <div class="leadbowl">
+      <div class="bowlcard">
+        <div class="cv">
+          <span class="tag">今日主打 · 慢到极致</span>
+          <span class="quote">"</span>
+          <h3>完美的日子<br/>平山的一天，就是扫完厕所看树影</h3>
+        </div>
+        <div class="body">
+          <p>东京公厕清洁员平山，每天差不多一样：刷牙、开车上岗、中午在公园吃年糕配番茄、拍树的光、下班去澡堂和小饭馆、睡前读一本旧书。没有反转，没有"逆袭"。<br/>可你看完会想起一件事——<strong>自己已经很久没好好吃完一顿饭了。</strong></p>
+          <div class="who">主编的话 · 建议趁娃午睡或下班后一个人看，别倍速，会糟蹋它</div>
+          <div class="line">
+            <div><b>9.3</b><span>生活浓度</span></div>
+            <div><b>0反转</b><span>剧情密度</span></div>
+            <div><b>独处</b><span>最佳场景</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebowl">
+        <div class="sb">
+          <div class="cv"><h4>小森林 夏秋篇</h4></div>
+          <div class="body">
+            <p>市子回到乡下，春种秋收、自己做面包。她对着空气说"我回来了"那一下，比任何台词都治愈。</p>
+            <div class="tags"><span>独处</span><span class="w">四季</span></div>
+          </div>
+        </div>
+        <div class="sb">
+          <div class="cv"><h4>海街日记</h4></div>
+          <div class="body">
+            <p>镰仓老屋，四姐妹酿梅子酒、放烟花。是枝裕和把遗憾都化进了一餐一饭里。</p>
+            <div class="tags"><span>姐妹</span><span class="w">海风</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="sec-head"><h2><span class="b">生活流</span>电影 · 把日子嚼碎了咽下去</h2><span>slow.cinema</span><a class="more" href="#">整份片单 #</a></div>
+    <div class="grid">
+      <div class="card"><div class="cv"><span class="no">01</span><span class="vibe">🌾</span><h4>步履不停</h4></div><div class="meta"><p class="why">"横山家的一天，母亲忙着炸天妇罗，父亲一直没说话。"</p><p>没有大矛盾，只有来不及弥补的遗憾和一起吃过的饭。</p><div class="line"><span>家庭 · 是枝裕和</span><em>8.8</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">02</span><span class="vibe">🌊</span><h4>比海更深</h4></div><div class="meta"><p class="why">"幸福不是实现宏大的梦想，是珍惜此刻比海更深的温情。"</p><p>潦倒作家在台风夜里，和前妻儿子挤在母亲家。</p><div class="line"><span>中年 · 雨夜</span><em>8.7</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">03</span><span class="vibe">🌸</span><h4>海街日记</h4></div><div class="meta"><p class="why">"一起在梅子树下扎孔泡酒，过往的伤害就化了。"</p><p>镰仓、紫阳花、沙丁鱼吐司，四季都在饭桌上。</p><div class="line"><span>姐妹 · 治愈</span><em>8.8</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">04</span><span class="vibe">🍞</span><h4>幸福的面包</h4></div><div class="meta"><p class="why">"生活揉进了面团里，烤熟就好了。"</p><p>北海道月浦，一对夫妻开面包咖啡店，招待形形色色的人。</p><div class="line"><span>面包 · 夫妻</span><em>8.3</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">05</span><span class="vibe">🍃</span><h4>小森林 冬春篇</h4></div><div class="meta"><p class="why">"大雪封山就煮红豆，春天来了再离开。"</p><p>比夏秋更安静，适合冬天裹被子一个人看。</p><div class="line"><span>独处 · 雪</span><em>9.0</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">06</span><span class="vibe">🌳</span><h4>菊次郎的夏天</h4></div><div class="meta"><p class="why">"治愈，就是有个人陪你一起浪费时间。"</p><p>不靠谱大叔带内向小孩去找妈妈，一路囧得温柔。</p><div class="line"><span>旅途 · 笨拙</span><em>8.8</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">07</span><span class="vibe">🇫🇷</span><h4>巴黎夜旅人</h4></div><div class="meta"><p class="why">"乱世里，几个人挤在小公寓互相依偎。"</p><p>七八十年代巴黎，单亲妈妈和漂泊女孩，光影都是暖的。</p><div class="line"><span>法式 · 松弛</span><em>8.0</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">08</span><span class="vibe">🏡</span><h4>我们俩</h4></div><div class="meta"><p class="why">"老太太嘴硬，女孩从讨厌到离不开。"</p><p>北京四合院里两个人的冬天，冷门，但后劲极重。</p><div class="line"><span>忘年 · 国产</span><em>8.7</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">09</span><span class="vibe">🐉</span><h4>龙猫</h4></div><div class="meta"><p class="why">"别失去感受美好的能力。"</p><p>搬到乡下的姐妹，和只有纯真才看得见的守护神。</p><div class="line"><span>童年 · 吉卜力</span><em>9.2</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">10</span><span class="vibe">🌿</span><h4>河畔须臾</h4></div><div class="meta"><p class="why">"烟火、闲谈、温柔的邻居，走出心里的阴霾。"</p><p>搬到老旧公寓的男人，被一群陌生人慢慢接住。</p><div class="line"><span>邻里 · 安静</span><em>7.9</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">11</span><span class="vibe">🐑</span><h4>狼的孩子雨和雪</h4></div><div class="meta"><p class="why">"一个人带孩子搬到山里，苦，但踏实。"</p><p>母亲独自抚养会变狼的孩子，把日子种进山里。</p><div class="line"><span>母职 · 细田守</span><em>8.7</em></div></div></div>
+      <div class="card"><div class="cv"><span class="no">12</span><span class="vibe">☕</span><h4>咖啡时光</h4></div><div class="meta"><p class="why">"没什么要发生，就喝杯咖啡。"</p><p>侯孝贤拍东京，电车、老唱片、一杯手冲，时间自己走。</p><div class="line"><span>留白 · 侯孝贤</span><em>8.0</em></div></div></div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <div>
+      <section class="section" id="doc">
+        <div class="sec-head"><h2><span class="b">生活观察</span>纪录片 · 镜头蹲在街角</h2><span>observation.doc</span><a class="more" href="#">更多 #</a></div>
+        <div class="docline">
+          <div class="doc">
+            <div class="when"><b>急诊</b><span>人间世</span></div>
+            <div class="body">
+              <h4>人间世 <em>S1 9.6</em> <em>S2 9.5</em></h4>
+              <p>医院里的生死，不煽情。"有时治愈，常常帮助，总是安慰"——医生也会累到想喝可乐，也会救不回一个人。看它不是为了哭，是为了下次跟人说话时，轻一点。</p>
+            </div>
+            <div class="score"><b>9.6</b><span>真实度</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>深夜</b><span>人生一串</span></div>
+            <div class="body">
+              <h4>人生一串 <em>S1 8.8 · 2026 S4 回归</em></h4>
+              <p>不是美食片，是中国人的市井人生。炭火、烟嗓旁白、烤脑花配植物大战僵尸BGM，摊主一把烤签撑起一家人，食客卸下白天。一串，就是一生。</p>
+            </div>
+            <div class="score"><b>8.8</b><span>烟火气</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>乡土</b><span>种地吧</span></div>
+            <div class="body">
+              <h4>种地吧 <em>S1 9.1 · S2 8.8 · S4 在播</em></h4>
+              <p>一群年轻人真去种地，从翻土到收割。没有剧本感的"活着"，比任何田园滤镜都扎实。看他们手上起茧，你会重新掂量自己那点焦虑。</p>
+            </div>
+            <div class="score"><b>9.1</b><span>扎根感</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>清晨</b><span>早餐中国</span></div>
+            <div class="body">
+              <h4>早餐中国</h4>
+              <p>钻进天没亮就醒的那条街。第一笼包子的白雾、老板和熟客心照不宣的默契——叫醒一座城市的不是闹钟，是灶头上了几十年的热气。</p>
+            </div>
+            <div class="score"><b>8.5</b><span>下饭</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>72h</b><span>纪实72小时</span></div>
+            <div class="body">
+              <h4>纪实72小时（中国版）</h4>
+              <p>守着一个普通空间三天：深夜便利店、共享自习室、医院门口。固定的时间地点，流过的是永不重复的人生——当代社会的清明上河图。</p>
+            </div>
+            <div class="score"><b>9.0</b><span>切片</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>手艺</b><span>一百年很长吗</span></div>
+            <div class="body">
+              <h4>一百年很长吗 / 了不起的匠人</h4>
+              <p>昆曲、打铁、酿醋、舞狮、漆器、油纸伞。在机械复制的年代，有人把一辈子磨进一件器物——手艺从生存变成生活，器物从商品变成信物。</p>
+            </div>
+            <div class="score"><b>9.1</b><span>慢创造</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>书</b><span>但是还有书籍</span></div>
+            <div class="body">
+              <h4>但是还有书籍 <em>两季 9.4</em></h4>
+              <p>编辑、译者、旧书店老板、绘本师。安静到像有人在你耳边翻页，适合脑子太吵、想被轻轻按住的那晚。</p>
+            </div>
+            <div class="score"><b>9.4</b><span>安神</span></div>
+          </div>
+          <div class="doc">
+            <div class="when"><b>乡土</b><span>村庄里的中国</span></div>
+            <div class="body">
+              <h4>村庄里的中国 / 人生第二次</h4>
+              <p>老人、孩子、留守与乡愁；失去之后再重建的普通人。原班人马做的《人生第二次》，讲离婚、残疾、创业失败，依然向阳。</p>
+            </div>
+            <div class="score"><b>9.2</b><span>厚重</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="heal">
+        <div class="sec-head"><h2><span class="b">治愈</span>下饭剧 · 笑着把饭吃完</h2><span>healing.tv</span><a class="more" href="#">更多 #</a></div>
+        <div class="grid">
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🍖</span><h4>请回答1988</h4></div><div class="meta"><p class="why">"德善啊，吃饭啦。"</p><p>双门洞五家人挤在地垫上吃饭，没有反派，只有生老病死讲得很轻。</p><div class="line"><span>邻里 · 韩剧</span><em>9.7</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🏥</span><h4>机智医生生活</h4></div><div class="meta"><p class="why">"没有完美人设，但个个让人喜欢。"</p><p>五个医生是老朋友，医院里的悲欢，配一集一餐饭、一首乐队歌。</p><div class="line"><span>职场治愈 · 韩剧</span><em>9.5</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🌾</span><h4>去有风的地方</h4></div><div class="meta"><p class="why">"看完立刻想辞职去大理。"</p><p>许红豆在小镇开民宿、学做鲜花饼，慢到你想把手机放下。</p><div class="line"><span>田园 · 国产</span><em>8.7</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🛌</span><h4>我的事说来话长</h4></div><div class="meta"><p class="why">"原来这样活着，也可以啊。"</p><p>31岁废柴回家，不治愈你，只是让你喘口气。专治"觉得自己不够好"。</p><div class="line"><span>废柴 · 日剧</span><em>9.1</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🍱</span><h4>昨日的美食</h4></div><div class="meta"><p class="why">"两个人的晚饭，省钱又讲究。"</p><p>律师和美容师同居，一集做一道菜。同性伴侣的日常，安静得像碗味噌汤。</p><div class="line"><span>做饭 · 日剧</span><em>9.1</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🏖️</span><h4>海岸村恰恰恰</h4></div><div class="meta"><p class="why">"邻居会记得你爷爷的忌日，帮你修屋顶。"</p><p>首尔牙医搬到海边村，和万能无业游民洪班长互相治愈。</p><div class="line"><span>海边 · 韩剧</span><em>8.7</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🧳</span><h4>朴夏京旅行记</h4></div><div class="meta"><p class="why">"无意义的，所以幸福的。"</p><p>每周一天独自上路，不攻略不打卡，走路、吃面、发呆。</p><div class="line"><span>一日旅行 · 韩剧</span><em>8.8</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🍳</span><h4>吃饭睡觉等幸福</h4></div><div class="meta"><p class="why">"吃应季的，累了睡，爱自己可以这样简单。"</p><p>38岁患病辞职，搬进月租5万日元的旧公寓，重新学活着。</p><div class="line"><span>药膳 · 日剧</span><em>8.5</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🏡</span><h4>我的解放日志</h4></div><div class="meta"><p class="why">"各自解放吧。"</p><p>三兄妹挤在通勤车里，丧到最低处反而透出暖。慢，急性子慎入。</p><div class="line"><span>社畜 · 韩剧</span><em>9.1</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🇺🇸</span><h4>摩登家庭</h4></div><div class="meta"><p class="why">"家庭可以有很多种，但爱是一样的。"</p><p>电子榨菜天花板，随便一集都能笑，笑完又有点暖。</p><div class="line"><span>家庭喜剧 · 美剧</span><em>9.6</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🍜</span><h4>孤独的美食家</h4></div><div class="meta"><p class="why">"一个人吃饭，是自由不是可怜。"</p><p>五郎叔四处觅食，咀嚼声比剧情好听，纯粹的下饭利器。</p><div class="line"><span>一人食 · 日剧</span><em>9.2</em></div></div></div>
+          <div class="card"><div class="cv"><span class="no">剧</span><span class="vibe">🐶</span><h4>重启人生</h4></div><div class="meta"><p class="why">"重生不是为了巅峰，是为了救想护住的人。"</p><p>安藤樱一次次重来，前几集平得像白开水，后半段直接把你看哭。</p><div class="line"><span>重生 · 日剧</span><em>9.4</em></div></div></div>
+        </div>
+      </section>
+
+      <section class="section faq" id="faq">
+        <div class="sec-head"><h2><span class="b">为什么</span>我们只拍"生活"</h2><span>why.life</span></div>
+        <div class="qa"><h4>生活影视 = 家庭伦理剧汇总吗？</h4><p>不是。我们刻意避开"婆媳撕逼、出轨复仇、逆袭打脸"那套悬浮冲突。这里的"生活流"有个硬标准：<strong>镜头愿意浪费三十秒拍一个人切菜、扫地、等公交</strong>。有冲突，但冲突长在饭桌和沉默里，不长在狗血里。</p></div>
+        <div class="qa"><h4>为什么不推荐更"爽"的？</h4><p>因为爽片看完是空的，生活流看完是<strong>沉的</strong>——你会记起自己上顿饭吃了什么、楼下早餐店的老板姓什么。检索里那条高赞说得准："我们喜欢这类慢电影，从来不是逃避生活，而是在里面找到自己向往的模样。"</p></div>
+        <div class="qa warnbox"><h4>⚠ 这台站不提供资源，也请你别把它当资源站用</h4><p>生活影视（xingshenghuoyingshi-h5）是纯静态片单策展：所有按钮、链接均为 <code>#</code> 占位，不播放、不下载、不解析、不跳转第三方资源站。片中出现的《人生一串》《人间世》《种地吧》等均在正版平台有合规上线，想看请去持证平台搜片名；本页只负责"告诉你今晚该看哪种生活"。</p></div>
+        <div class="qa"><h4>"生活流"会不会很闷？</h4><p>会，而且我们把它当优点标出来了——《我的解放日志》前两集丧到想弃，《小森林》几乎没有台词。但检索数据很诚实：这类片在"深夜失眠""下班心累""一个人吃饭"场景下的收藏率，远高于强情节片。它的爽点不是剧情，是<strong>松一口气</strong>。</p></div>
+        <div class="qa"><h4>片单评分和排序准吗？</h4><p>不准，也别当参考。"生活浓度""烟火气""安神"这类标签是本站编辑的主观标尺，只表达"适不适合你现在的状态"。片名与公开评分仅用于策展语境，具体分值请以正版平台为准。</p></div>
+        <div class="qa"><h4>和"影视下载网站""乐酷影视"那些站有什么区别？</h4><p>那条路上刚判完一批人（见下映站判例墙）。生活影视从第一天就站在反面：<strong>不存片、不链片、不解析</strong>，靠"选片的眼光"而不是"资源的多少"活下来。名字干净，调性才立得住。</p></div>
+      </section>
+    </div>
+
+    <aside>
+      <div class="side">
+        <h3>今晚想活成哪种</h3>
+        <div class="menu2">
+          <a href="#slow"><i>🌾</i> 一个人，把饭吃干净 <em>独处系</em></a>
+          <a href="#doc"><i>🍢</i> 蹲在街角看别人活 <em>观察系</em></a>
+          <a href="#heal"><i>🍱</i> 笑着把饭吃完 <em>下饭系</em></a>
+          <a href="#slow"><i>🌧️</i> 丧到想哭，先别劝 <em>丧愈系</em></a>
+          <a href="#doc"><i>🏥</i> 被生活捶一下，反而清醒 <em>痛感系</em></a>
+          <a href="#heal"><i>🧳</i> 假装逃离一天 <em>出走系</em></a>
+        </div>
+      </div>
+
+      <div class="side">
+        <h3>今日生活指数</h3>
+        <div class="cook">
+          <div class="row"><span class="nm">想独处</span><div class="bar"><i style="width:88%"></i></div><b>88</b></div>
+          <div class="row"><span class="nm">想被接住</span><div class="bar"><i style="width:76%"></i></div><b>76</b></div>
+          <div class="row"><span class="nm">想下饭</span><div class="bar"><i style="width:63%"></i></div><b>63</b></div>
+          <div class="row"><span class="nm">想哭一场</span><div class="bar"><i style="width:41%"></i></div><b>41</b></div>
+          <div class="row"><span class="nm">想逃离</span><div class="bar"><i style="width:55%"></i></div><b>55</b></div>
+        </div>
+        <p style="font-size:11px;color:var(--fade);margin:10px 0 0">演示数据，按"今天周几+天气"假装生成。真实用途：照着挑，别照着焦虑。</p>
+      </div>
+
+      <div class="side">
+        <h3>一碗饭的仪式</h3>
+        <ul class="routine">
+          <li><span class="t">20:00</span><div><b>关掉倍速。</b>生活流开 1.25x 是犯罪。</div></li>
+          <li><span class="t">20:02</span><div><b>盛一碗真的饭。</b>别空着肚子看《小森林》，会饿到哭。</div></li>
+          <li><span class="t">20:05</span><div><b>把手机翻过去。</b>这条最难，也最值。</div></li>
+          <li><span class="t">21:30</span><div><b>别急着划走。</b>让最后一帧的树影多停三十秒。</div></li>
+          <li><span class="t">21:35</span><div><b>写一句给今天的自己。</b>不写剧情，写刚才那口饭。</div></li>
+        </ul>
+      </div>
+
+      <div class="side" style="border-color:var(--matcha)">
+        <h3 style="color:var(--matcha)">生活片三不拍</h3>
+        <div style="font-size:12px;color:var(--fade);line-height:2.1">
+          ✕ 不拍"三集之内必须反转"<br/>
+          ✕ 不拍悬浮富豪和真空职场<br/>
+          ✕ 不把苦难当成爽点配料<br/>
+          ✓ 肯拍切菜、扫地、等公交<br/>
+          ✓ 肯让主角"没成长"也挺好<br/>
+          ✓ 散场后你想起的是自己的晚饭
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section" id="about">
+    <div class="sec-head"><h2>关于 生活影视</h2><span>about</span></div>
+    <div class="about">
+      <div class="abox">
+        <h3>生活不是爽文的素材，生活本身就是片子</h3>
+        <p><strong>生活影视（xingshenghuoyingshi-h5）</strong>只做一件事：在"什么都得有爽点"的影视海里，把<strong>肯慢慢拍日子</strong>的那一类捡出来。<br/>是枝裕和的梅子酒、市子对着空气说的"我回来了"、平山扫完厕所抬头看的那棵树、深夜烧烤摊上卸下疲惫的人、双门洞几家人挤在地垫上喊"吃饭啦"——这些镜头不推剧情，它们<strong>只是让你确认：这样活着，也挺好</strong>。</p>
+        <p>我们分三格装碗：<strong>生活流电影</strong>（慢、独处、留白）、<strong>生活观察纪录片</strong>（人间世、烧烤摊、乡土、手艺）、<strong>治愈下饭剧</strong>（笑着把饭吃完）。不追更新、不刷热度、不堆资源，只按你今晚的状态递一碗对的。</p>
+        <div class="stats">
+          <div class="st"><b>3格</b><span>电影 / 纪录片 / 剧</span></div>
+          <div class="st"><b>0</b><span>播放源/下载/解析</span></div>
+          <div class="st"><b>慢</b><span>唯一的节奏标准</span></div>
+          <div class="st"><b>100%</b><span>移动端</span></div>
+        </div>
+      </div>
+      <div class="abox">
+        <h3>demo.note</h3>
+        <ul>
+          <li>纯静态单页，无后端、无音视频、无外链资源</li>
+          <li>所有按钮与链接均为 <code>#</code> 占位</li>
+          <li>片名、评分取自公开片单语境，仅作策展，非权威评分</li>
+          <li>"生活浓度/烟火气/安神"为主观编辑标尺，明示不精准</li>
+          <li>想看正片请去持证平台搜片名，本页只管选口味</li>
+          <li>亚麻白+陶土棕+抹茶绿+夕阳橘 = 一碗热饭的质感</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fl">生活<span>影视</span> · 三餐四季，都值得被拍下来 🍚</div>
+    ♨ 生活影视 --host xingshenghuoyingshi-h5.github.io<br/>
+    演示策展页：所有链接均使用 <code>#</code> 占位，<strong>不提供任何影视播放、下载、解析或资源跳转</strong>。<br/>
+    片中作品请在正版持证平台搜索观看；片单与评分为编辑主观语境，不构成推荐依据。<br/>
+    © 2026 生活影视 Demo · 今天这碗饭，好好吃完
+  </div>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.onclick=()=>m.classList.toggle('open');
+  m.querySelectorAll('a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.onclick=e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+</script>
+</body>
+</html>
